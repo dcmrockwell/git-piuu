@@ -11,8 +11,8 @@ const Header = () => {
   const handleClose = () => setNav(!nav);
 
   return (
-    <div className="h-[100px] w-full items-center border-b-[1px] border-[#cbd542] relative px-3">
-      <div className="flex flex-row p-6 justify-between items-center m-auto max-w-[1440px]">
+    <div className="h-[100px] w-full items-center border-b-[1px] border-[#faf4e32d] relative lg:px-3">
+      <div className="flex flex-row p-6 justify-between items-center m-auto max-w-[1440px] lg:justify-around">
         <div className="flex flex-row gap-10">
           <img src={logo} className="w-[50px] h-[50px]" />
         </div>
@@ -22,6 +22,7 @@ const Header = () => {
           <li>Swap</li>
           <li>Lottery</li>
           <li>Staking</li>
+          <li>Docs</li>
         </ul>
 
         <div className="hidden lg:flex flex-row items-center gap-5">
@@ -41,17 +42,19 @@ const Header = () => {
         className={
           !nav
             ? "hidden"
-            : "h-[100vh] w-full m-auto space-y-10 mt-1  px-[80px] absolute  text-center lg:hidden pt-[40px]"
+            : "h-[100vh] w-full m-auto space-y-10 mt-1 z-10 px-[80px] absolute  text-center bg-[#1a273a] lg:hidden pt-[40px]"
         }
       >
         <li className="text-[30px] flex justify-center   items-center">
           Dashboard
         </li>
-        <li className="text-[30px] flex justify-center   items-center">Swap</li>
-        <li className="text-[30px]  ">Lottery</li>
+        <li className="text-[30px] flex justify-center   items-center">
+          Lottery
+        </li>
+        <li className="text-[30px]  ">Swap</li>
         <li className="text-[30px]">Staking</li>
         <div className="xl:hidden justify-center flex">
-          <ConnectButton chainStatus="none" showBalance={false} />
+          <ConnectButton />
         </div>
       </ul>
     </div>

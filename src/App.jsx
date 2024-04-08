@@ -9,7 +9,11 @@ import {
   braveWallet,
   injectedWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import {
+  getDefaultConfig,
+  RainbowKitProvider,
+  midnightTheme,
+} from "@rainbow-me/rainbowkit";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 
@@ -26,7 +30,16 @@ function App() {
     <>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider showRecentTransactions={true} modalSize="compact">
+          <RainbowKitProvider
+            theme={midnightTheme({
+              accentColor: "blue",
+              accentColorForeground: "#black",
+              borderRadius: "large",
+              fontStack: "Cinzel",
+            })}
+            showRecentTransactions={true}
+            modalSize="compact"
+          >
             <Home />
           </RainbowKitProvider>
         </QueryClientProvider>
